@@ -31,7 +31,6 @@ export class TodoResolver {
     }
     
     todo.status = status;
-    // Si le statut est DONE, on marque aussi comme complété
     if (status === TodoStatus.DONE) {
       todo.completed = true;
     }
@@ -50,7 +49,6 @@ export class TodoResolver {
     }
     
     todo.completed = !todo.completed;
-    // Si on marque comme complété, on met aussi le statut à DONE
     if (todo.completed) {
       todo.status = TodoStatus.DONE;
     }
